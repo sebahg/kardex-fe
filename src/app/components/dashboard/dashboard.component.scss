@@ -1,0 +1,55 @@
+$background-color: #4C86A8;
+$color: #80CED7;
+$background-color-hover: #000000;
+
+.dashboard {
+  min-width: 20rem !important;
+}
+
+h2, h3 {
+  font-size: 4vh !important;
+  font-weight: bold !important;
+  //padding-bottom: 3rem;
+  color: $color;
+}
+
+p {
+  font-size: 4vh !important;
+  font-weight: normal !important;
+  //padding-bottom: 3rem;
+  color: #5E6973;
+}
+
+.col {
+  margin-top: 0.6vmax !important;
+}
+
+.card {
+  margin: 2rem;
+  width: 95% !important;
+  max-width: 25rem !important;
+  min-height: 15rem !important;
+}
+
+.card-add-product {
+  margin: 2rem;
+  width: 95% !important;
+  max-width: 35rem !important;
+  min-height: 10rem !important;
+}
+
+.title {
+  height: 2rem;
+  font-weight: lighter;
+  font-size: 2rem;
+}
+
+.cards {
+  width: 90% !important;
+  margin: 0 auto;
+}
+
+.cards-add-product {
+  width: 90% !important;
+  margin: 0 auto;
+}

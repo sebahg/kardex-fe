@@ -1,0 +1,29 @@
+<div class="sidebar-container" [class.is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+  <mat-toolbar class="toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="app-name">Control de Stock de Productos</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0" >
+
+
+
+    <mat-sidenav class="sidenav-snav" #snav [mode]="mobileQuery.matches ? 'push' : 'push'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" (mouseleave)="mouseLeave($event, snav)">
+
+      <mat-nav-list class="item-list mt-5 sidenav-snav">
+        <mat-list-item class="item">
+          <a routerLink="/" (click)="onClick(snav)" class="item-link">INICIO</a>
+          <i class="fa fa-angle-right pull-right"></i>
+        </mat-list-item>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
