@@ -20,7 +20,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import {ServicesModule} from "./service/service.module";
 import {FormsModule} from "@angular/forms";
 import {LoadingComponent} from "./components/loading/loading.component";
-import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -48,8 +47,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule,
-    NgxPaginationModule
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
