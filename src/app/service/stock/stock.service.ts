@@ -64,6 +64,12 @@ export class StockService {
       );
   }
 
+  deleteProduct(productId) {
+    let url = this.baseUrl + `/products/${productId}`;
+
+    return this.httpClient.delete(url);
+  }
+
   removeStock(stockId, count) {
     let url = this.baseUrl + `/stock/${stockId}/remove?count=${count}`;
 
@@ -74,6 +80,13 @@ export class StockService {
         })
       );
   }
+
+  deleteStock(stockId) {
+    let url = this.baseUrl + `/stock/${stockId}`;
+
+    return this.httpClient.delete(url);
+  }
+
 
   getCount() {
     const url = this.baseUrl + '/stock/count';

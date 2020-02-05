@@ -174,4 +174,49 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  deleteProduct(stock: StockModel) {
+
+    swal.fire({
+        title: "Estás seguro?",
+        icon: "warning",
+        showClass: {
+          popup: 'animated fadeInDown faster'
+        },
+        hideClass: {
+          popup: 'animated fadeOutUp faster'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Si, eliminar producto'
+      }
+    ).then((result) => {
+      if (result.value) {
+        this.stockService.deleteProduct(stock.product.id)
+          .subscribe(() => {
+              this.stockService.deleteStock(stock.id)
+                .subscribe(() => {
+                    this.getAllStock();
+                    swal.fire({
+                      icon: 'success',
+                      text: 'Producto eliminado correctamente'
+                    });
+                  },
+                  error => {
+                    swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: error.error.errorMessage
+                    });
+                  });
+            },
+            error => {
+              swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.error.errorMessage
+              });
+          });
+      }
+    });
+  }
 }
